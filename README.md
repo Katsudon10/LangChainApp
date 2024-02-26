@@ -16,8 +16,11 @@
    DB_NAME=
    DB_USER=
    DB_PASSWORD=
-   OPENAI_API=
-   AZURE_API=
+
+   OPENAI_API_KEY=""
+   AZURE_OPENAI_API_KEY=""
+   AZURE_OPENAI_ENDPOINT=""
+   GOOGLE_API_KEY=""
    ```
 3. ```bash
    docker compose up -d
