@@ -1,3 +1,7 @@
 fastapi
 uvicorn
 mysqlclient
+langchain-openai
+python-dotenv
+langchain_google_genai
+
