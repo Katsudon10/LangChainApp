@@ -1,4 +1,11 @@
 # LangChainApp
+複数のLLMに同じ質問を同時に行い結果を返すアプリケーション．
+
+対応しているLLM
+* gemini[Google]
+* chatGPT[openAI] (coming soon)
+* Azure OpenAI[microsoft] (coming soon)
+* Amazon Bedrok[Amazon] (coming soon)
 
 # 開発環境
 * Node.js 20.11.1
