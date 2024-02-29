@@ -1,4 +1,4 @@
-# LangChainApp
+# LangChainApp(制作中)
 複数のLLMに同じ質問を同時に行い結果を返すアプリケーション．
 
 対応しているLLM
