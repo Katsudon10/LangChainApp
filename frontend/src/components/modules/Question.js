@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button} from '@chakra-ui/react';
+import {Button,Input} from '@chakra-ui/react';
 
 import {Link} from "react-router-dom";
 
@@ -9,12 +9,21 @@ function Question() {
     const handleSubmit = (e) => {
         e.preventDefault();
         <Link to="/result" />
+        setQuestion("");
     }
 
     return (
         <div>
             <form >
-                <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)} placeholder='質問を入力してください'/>
+                <Input 
+                    size="md" 
+                    width="auto" 
+                    type="text" 
+                    value={question} 
+                    onChange={(e) => setQuestion(e.target.value)} 
+                    placeholder='質問を入力してください'
+                    _placeholder={{ opacity: 1, color: 'gray.500' }}
+                />
                 <Button onClick={handleSubmit} colorScheme="teal" size="md">実行する</Button>
             </form>
         </div>
