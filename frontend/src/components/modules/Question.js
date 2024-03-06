@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Button,Input} from '@chakra-ui/react';
 
 import axios from 'axios';
+import Answer from '../atoms/Answer';
 
 
 function Question() {
@@ -11,7 +12,7 @@ function Question() {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:8000/chat',{question: question}).then((res) => {
-            setAnswer(res.data[0].answer);
+            setAnswer(res.data);
         }).catch((err) => {
             console.log(err);
         });
@@ -32,9 +33,17 @@ function Question() {
                 />
                 <Button onClick={handleSubmit} colorScheme="teal" size="md">実行する</Button>
             </form>
-            <div>
-                <p>{answer}</p>
-            </div>
+            {answer ? (
+                <div>
+                    <Answer answer={answer[0].answer} model="OpenAI" />
+                    <Answer answer={answer[1].answer} model="Azure" />
+                    <Answer answer={answer[2].answer} model="Gemini" />
+                </div>
+                ) :
+                (<div>
+                    <p>生成中です．</p>
+                </div>)
+            }
         </div>
     );
 };
