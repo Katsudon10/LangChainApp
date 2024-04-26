@@ -24,4 +24,4 @@ if __name__ == "__main__":
     # model_name = "claude-3-sonnet-20240229"
     # model_name = "claude-3-haiku-20240307"
 
-    print(Chat_Azure("gpt-35-turbo",1.0,0.7, "What is the meaning of life?"))
+    print(Chat_Anthropic("claude-3-opus-20240229",1.0,0.7, "What is the meaning of life?"))
