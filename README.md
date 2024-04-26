@@ -18,6 +18,7 @@
    git clone https://github.com/Katsudon10/LangChainApp.git
    ```
 2. .envの作成 
+   実行するには各LLMのAPIキーが必要です．
    ```.env
    DB_HOST=
    DB_ROOT_PASSWORD=
