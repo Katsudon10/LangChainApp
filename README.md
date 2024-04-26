@@ -6,6 +6,7 @@
 * chatGPT[openAI] (coming soon)
 * Azure OpenAI[microsoft] (coming soon)
 * Amazon Bedrok[Amazon] (coming soon)
+* Claude3[Anthropic] (coming soon)
 
 # 開発環境
 * Node.js 20.11.1
@@ -28,6 +29,7 @@
    AZURE_OPENAI_API_KEY=""
    AZURE_OPENAI_ENDPOINT=""
    GOOGLE_API_KEY=""
+   ANTHROPIC_API_KEY=""
    ```
 3. ```bash
    docker compose up -d
