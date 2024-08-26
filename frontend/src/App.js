@@ -1,6 +1,6 @@
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
-import Home from './components/pages/Home';
+import Home from './components/Home';
 
 
 function App() {
