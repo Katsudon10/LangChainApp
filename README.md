@@ -1,12 +1,17 @@
 # LangChainApp(制作中)
 複数のLLMに同じ質問を同時に行い結果を返すアプリケーション．
+各LLMを実行するにはAPIキーをenvファイルに書き込んでください．
+
+現状 
+* フロントエンドの改修に向けReact，TypeScriptを勉強中です．
+* データベースは環境構築は終わっていますが，履歴を表示する機能を実装する予定です．
 
 対応しているLLM
-* gemini[Google]
-* chatGPT[openAI] (coming soon)
-* Azure OpenAI[microsoft] (coming soon)
-* Amazon Bedrok[Amazon] (coming soon)
-* Claude3[Anthropic] (coming soon)
+* gemini [Google]
+* chatGPT [openAI] 
+* Azure OpenAI [microsoft] 
+* Amazon Bedrok [Amazon] 
+* Claude3 [Anthropic] 
 
 # 開発環境
 * Node.js 20.11.1
