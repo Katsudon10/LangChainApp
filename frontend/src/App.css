@@ -2,3 +2,11 @@
   text-align: center;
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IEとEdge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Webkitベースのブラウザ */
+}
