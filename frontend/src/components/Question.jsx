@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import {Button,Input} from '@chakra-ui/react';
 
 import axios from 'axios';
-import Answer from './Answer';
 
 
 function Question() {
