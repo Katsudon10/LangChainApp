@@ -5,25 +5,30 @@ import axios from 'axios';
 
 function Question() {
     const [messages, setMessages] = useState([]);
-    const [question,setQuestion] = useState("")
+    const [question,setQuestion] = useState("");
     
     const handleSubmit = (e) => {
         e.preventDefault();
         if(question.trim()) {
-            setMessages([...messages, {message: question, sender: 'user'}]);
-            console.log(messages);
-            sendGPTs(question);
+            setMessages(prevMessages => [...prevMessages, { message: question, sender: 'user' }]);
+            axios.post('http://localhost:8000/chat',{question:question}).then((res) => {
+                setMessages(prevMessages => [...prevMessages, { message: res.data[0].answer, sender: 'OpenAI' }]);
+                setMessages(prevMessages => [...prevMessages, { message: res.data[1].answer, sender: 'Google' }]);
+                setMessages(prevMessages => [...prevMessages, { message: res.data[2].answer, sender: 'Claude' }]);
+            }).catch((err) => {
+                console.log(err);
+            });
             setQuestion("");
         }
-    }
+    };
 
-    const sendGPTs = (question) => {
-        axios.post('http://localhost:8000/chat',{question: question}).then((res) => {
-            setMessages([...messages, {message: res.data.answer, sender: 'bot'}]);
-        }).catch((err) => {
-            console.log(err);
-        });
-    }
+    // const sendGPTs = (question) => {
+    //     axios.post('http://localhost:8000/chat',{question: question}).then((res) => {
+    //         setMessages([...messages, { message: res.data.answer, sender: 'bot' }]);
+    //     }).catch((err) => {
+    //         console.log(err);
+    //     });
+    // };
 
     return (
         <div className='container mx-auto pt-16 h-[calc(100%-8rem)] flex flex-col'>
@@ -32,7 +37,7 @@ function Question() {
                     <div
                         key={index}
                         className={`p-2 my-2 rounded-lg ${
-                        msg.type === 'user' ? 'bg-blue-500 text-white ml-auto' : 'bg-gray-300 text-black mr-auto'
+                        msg.sender === 'user' ? 'bg-blue-500 text-white max-w-md ml-auto block w-fit' : 'bg-gray-300 text-black mr-auto'
                         }`}
                     >
                         {msg.message}
