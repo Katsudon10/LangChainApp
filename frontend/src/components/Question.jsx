@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import axios from 'axios';
+import Chat from './Chat';
 
 
 function Question() {
@@ -34,14 +35,16 @@ function Question() {
         <div className='container mx-auto pt-16 h-[calc(100%-8rem)] flex flex-col'>
             <div className="flex-grow overflow-y-auto hide-scrollbar p-4">
                 {messages.map((msg, index) => (
-                    <div
-                        key={index}
-                        className={`p-2 my-2 rounded-lg ${
-                        msg.sender === 'user' ? 'bg-blue-500 text-white max-w-md ml-auto block w-fit' : 'bg-gray-300 text-black mr-auto'
-                        }`}
-                    >
-                        {msg.message}
-                    </div>
+                    // <div
+                    //     key={index}
+                    //     className={`p-2 my-2 rounded-lg ${
+                    //     msg.sender === 'user' ? 'bg-blue-500 text-white max-w-md ml-auto block w-fit' : 'bg-gray-300 text-black mr-auto'
+                    //     }`}
+                    // >
+                    //     {msg.message}
+                    // </div>
+                    
+                    <Chat  key={index} message={msg.message} sender={msg.sender} />
                 ))}
             </div>
             <div className='fixed bottom-6 left-0 right-0 container mx-auto p-4 bg-white border-t'>
