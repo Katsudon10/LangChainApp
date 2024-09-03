@@ -11,9 +11,9 @@ def Chat_GoogleAI(model_name,temperature,top_p, question):
     model = ChatGoogleGenerativeAI(
         model=model_name,
         temperature=temperature,
-        kwargs={
-            "top_p": top_p,
-        }
+        # kwargs={
+        #     "top_p": top_p,
+        # }
     )
 
     answer = model.invoke(question).content

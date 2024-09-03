@@ -11,13 +11,13 @@ def Chat_OpenAI(model_name,temperature,top_p, question):
     model = ChatOpenAI(
         model_name=model_name,
         temperature=temperature,
-        kwargs={
-            "top_p": top_p,
-        }
+        # model_kwargs={
+        #     "top_p": top_p,
+        # }
     )
 
     answer = model.invoke(question).content
     return answer
 
 if __name__ == "__main__":
-    print(Chat_OpenAI("gpt-3.5-turbo",1.0,1.0, "What is the meaning of life?"))
+    print(Chat_OpenAI("gpt-4o",0,1.0, "10 plus 10"))
