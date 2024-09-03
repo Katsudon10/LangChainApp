@@ -32,7 +32,7 @@ function Question() {
     // };
 
     return (
-        <div className='container mx-auto pt-16 h-[calc(100%-8rem)] flex flex-col'>
+        <div className='max-w-5xl mx-auto pt-16 h-[calc(100%-8rem)] flex flex-col'>
             <div className="flex-grow overflow-y-auto hide-scrollbar p-4">
                 {messages.map((msg, index) => (
                     // <div
@@ -47,7 +47,7 @@ function Question() {
                     <Chat  key={index} message={msg.message} sender={msg.sender} />
                 ))}
             </div>
-            <div className='fixed bottom-6 left-0 right-0 container mx-auto p-4 bg-white border-t'>
+            <div className='fixed bottom-6 left-0 right-0 max-w-5xl mx-auto p-4 bg-white border-t'>
                 <form className='flex items-center space-x-2'>
                     <textarea
                         rows={1}
