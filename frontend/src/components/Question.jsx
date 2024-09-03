@@ -14,7 +14,7 @@ function Question() {
             setMessages(prevMessages => [...prevMessages, { message: question, sender: 'user' }]);
             axios.post('http://localhost:8000/chat',{question:question}).then((res) => {
                 setMessages(prevMessages => [...prevMessages, { message: res.data[0].answer, sender: 'OpenAI' }]);
-                setMessages(prevMessages => [...prevMessages, { message: res.data[1].answer, sender: 'Google' }]);
+                setMessages(prevMessages => [...prevMessages, { message: res.data[1].answer, sender: 'Gemini' }]);
                 setMessages(prevMessages => [...prevMessages, { message: res.data[2].answer, sender: 'Claude' }]);
             }).catch((err) => {
                 console.log(err);
