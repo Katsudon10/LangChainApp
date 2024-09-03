@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .hide-scrollbar {
   -ms-overflow-style: none;  /* IEとEdge */
   scrollbar-width: none;  /* Firefox */
