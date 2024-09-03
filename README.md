@@ -1,16 +1,20 @@
-# LangChainApp(制作中)
+# LangChainApp
 複数のLLMに同じ質問を同時に行い結果を返すアプリケーション．
+![実行した様子](https://github.com/Katsudon10/LangChainApp/blob/main/assets/LLM.png)
 各LLMを実行するにはAPIキーをenvファイルに書き込んでください．
 
-現状 
+# 作成経緯
+* LLMは必ず正しい情報を生成するわけではないので，情報の正確性を確かめる必要がある．
+* LLMの特徴として分からないものは生成内容が雑になる．
+* そのため，複数のLLMを実行し，生成した内容の類似度が高ければ情報の信頼度が高いと判定できる
+
+# 現状 
 * フロントエンドの改修に向けReact，TypeScriptを勉強中です．
 * データベースは環境構築は終わっていますが，履歴を表示する機能を実装する予定です．
 
-対応しているLLM
+# 対応しているLLM
 * gemini [Google]
 * chatGPT [openAI] 
-* Azure OpenAI [microsoft] 
-* Amazon Bedrok [Amazon] 
 * Claude3 [Anthropic] 
 
 # 開発環境
